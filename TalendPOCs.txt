@@ -1,0 +1,5 @@
+Talend POCs 
+1. read/write data from csv, xlsx , json , xml and sql server table
+2. save metadata (connections) and use to read from csv, json, xml and sql server.
+3. tmap inner - join, left join
+4. 

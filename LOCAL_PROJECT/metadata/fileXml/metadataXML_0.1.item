@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:XmlFileConnection xmi:id="_AA804MXTEeu0hOi15BCY8A" name="metadataXML" dataPackage="_AA805MXTEeu0hOi15BCY8A" XmlFilePath="C:/Users/salman/Desktop/Talend_WS/source/test.xml" Encoding="UTF-8" fileContent="3C726F6F743E0D0A093C726F773E0D0A09093C76616C313E363C2F76616C313E0D0A09093C76616C323E373C2F76616C323E0D0A093C2F726F773E0D0A093C726F773E0D0A09093C76616C313E383C2F76616C313E0D0A09093C76616C323E393C2F76616C323E0D0A093C2F726F773E0D0A0D0A3C2F726F6F743E">
+    <schema xmi:id="_AA804cXTEeu0hOi15BCY8A" LimitBoucle="-1" AbsoluteXPathQuery="/root/row">
+      <schemaTargets xmi:id="_AA804sXTEeu0hOi15BCY8A" RelativeXPathQuery="val1" TagName="val1"/>
+      <schemaTargets xmi:id="_AA8048XTEeu0hOi15BCY8A" RelativeXPathQuery="val2" TagName="val2"/>
+    </schema>
+  </TalendMetadata:XmlFileConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_AA805MXTEeu0hOi15BCY8A" name="default" dataManager="_AA804MXTEeu0hOi15BCY8A">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_AA805cXTEeu0hOi15BCY8A" id="_wtuicMXSEeu0hOi15BCY8A" label="metadataXML">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_AA805sXTEeu0hOi15BCY8A" label="val1" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_AA8058XTEeu0hOi15BCY8A" label="val2" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

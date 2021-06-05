@@ -1,0 +1,3 @@
+$fileDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+cd $fileDir
+java '-Dtalend.component.manager.m2.repository=%cd%/../lib' '-Xms256M' '-Xmx1024M' '-Dfile.encoding=UTF-8' -cp '.;../lib/routines.jar;../lib/log4j-slf4j-impl-2.12.1.jar;../lib/log4j-api-2.12.1.jar;../lib/log4j-core-2.12.1.jar;../lib/jtds-1.3.1-patch-20190523.jar;../lib/jaxen-1.1.6.jar;../lib/slf4j-api-1.7.25.jar;../lib/dom4j-2.1.1.jar;../lib/xpathutil-1.0.0.jar;../lib/accessors-smart-1.1.jar;../lib/talend_DB_mssqlUtil-1.4.jar;../lib/json-path-2.1.0.jar;../lib/json-smart-2.2.1.jar;../lib/talendcsv.jar;../lib/crypto-utils.jar;../lib/talend_file_enhanced_20070724.jar;usemetadatatoread_0_1.jar;' local_project.usemetadatatoread_0_1.useMetadataToRead  $args

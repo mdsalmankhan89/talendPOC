@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<root>
+<record>
+<val1>10</val1>
+<val2>20</val2>
+</record>
+<record>
+<val1>30</val1>
+<val2>40</val2>
+</record>
+</root>

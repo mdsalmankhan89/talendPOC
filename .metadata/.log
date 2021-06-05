@@ -1,0 +1,469 @@
+!SESSION 2021-06-04 22:01:06.751 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+This is a continuation of log file C:\Users\salman\Desktop\Talend_WS\.metadata\.bak_0.log
+Created Time: 2021-06-05 18:07:03.716
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 18:07:03.717
+!MESSAGE 2021-06-05 18:07:03,713 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 18:07:04.098
+!MESSAGE 2021-06-05 18:07:04,097 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 18:07:04.267
+!MESSAGE 2021-06-05 18:07:04,266 INFO  org.talend.designer.core.runprocess.Processor  - Command line: C:/Program Files/Java/jdk-11.0.11/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/salman/Desktop/Talend_WS/LOCAL_PROJECT/poms/jobs/process/use_tmap_0.1/target/classpath.jar; local_project.use_tmap_0_1.use_tMap --context=Default --stat_port=4078 %*
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:50:28.576
+!MESSAGE 2021-06-05 19:50:28,575 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:50:28.580
+!MESSAGE 2021-06-05 19:50:28,579 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:50:28.584
+!MESSAGE 2021-06-05 19:50:28,583 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:50:28.588
+!MESSAGE 2021-06-05 19:50:28,587 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:50:28.594
+!MESSAGE 2021-06-05 19:50:28,593 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:50:28.600
+!MESSAGE 2021-06-05 19:50:28,599 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:50:28.605
+!MESSAGE 2021-06-05 19:50:28,604 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:50:28.609
+!MESSAGE 2021-06-05 19:50:28,608 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:50:28.613
+!MESSAGE 2021-06-05 19:50:28,612 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:50:29.144
+!MESSAGE 2021-06-05 19:50:29,143 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:50:29.509
+!MESSAGE 2021-06-05 19:50:29,508 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:50:29.960
+!MESSAGE 2021-06-05 19:50:29,959 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:50:29.962
+!MESSAGE 2021-06-05 19:50:29,961 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:50:29.966
+!MESSAGE 2021-06-05 19:50:29,965 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:50:29.969
+!MESSAGE 2021-06-05 19:50:29,968 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:50:30.262
+!MESSAGE 2021-06-05 19:50:30,261 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:50:30.805
+!MESSAGE 2021-06-05 19:50:30,804 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:50:31.024
+!MESSAGE 2021-06-05 19:50:31,023 INFO  org.talend.designer.core.runprocess.Processor  - Command line: C:/Program Files/Java/jdk-11.0.11/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/salman/Desktop/Talend_WS/LOCAL_PROJECT/poms/jobs/process/use_tmap_0.1/target/classpath.jar; local_project.use_tmap_0_1.use_tMap --context=Default --stat_port=3730 %*
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:06.630
+!MESSAGE 2021-06-05 19:56:06,630 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:06.630
+!MESSAGE 2021-06-05 19:56:06,630 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:06.630
+!MESSAGE 2021-06-05 19:56:06,630 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:06.645
+!MESSAGE 2021-06-05 19:56:06,645 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:06.645
+!MESSAGE 2021-06-05 19:56:06,645 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:06.645
+!MESSAGE 2021-06-05 19:56:06,645 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:06.645
+!MESSAGE 2021-06-05 19:56:06,645 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:06.661
+!MESSAGE 2021-06-05 19:56:06,661 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:06.661
+!MESSAGE 2021-06-05 19:56:06,661 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:07.236
+!MESSAGE 2021-06-05 19:56:07,236 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:07.697
+!MESSAGE 2021-06-05 19:56:07,697 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:08.000
+!MESSAGE 2021-06-05 19:56:07,999 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:08.003
+!MESSAGE 2021-06-05 19:56:08,002 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:08.006
+!MESSAGE 2021-06-05 19:56:08,005 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:08.008
+!MESSAGE 2021-06-05 19:56:08,007 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:08.173
+!MESSAGE 2021-06-05 19:56:08,172 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:08.562
+!MESSAGE 2021-06-05 19:56:08,561 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:08.739
+!MESSAGE 2021-06-05 19:56:08,738 INFO  org.talend.designer.core.runprocess.Processor  - Command line: C:/Program Files/Java/jdk-11.0.11/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/salman/Desktop/Talend_WS/LOCAL_PROJECT/poms/jobs/process/use_tmap_0.1/target/classpath.jar; local_project.use_tmap_0_1.use_tMap --context=Default --stat_port=3461 %*
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:44.597
+!MESSAGE 2021-06-05 19:56:44,597 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:44.597
+!MESSAGE 2021-06-05 19:56:44,597 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:44.597
+!MESSAGE 2021-06-05 19:56:44,597 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:44.612
+!MESSAGE 2021-06-05 19:56:44,612 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:44.612
+!MESSAGE 2021-06-05 19:56:44,612 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:44.612
+!MESSAGE 2021-06-05 19:56:44,612 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:44.612
+!MESSAGE 2021-06-05 19:56:44,612 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:44.628
+!MESSAGE 2021-06-05 19:56:44,612 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:56:44.628
+!MESSAGE 2021-06-05 19:56:44,628 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:44.992
+!MESSAGE 2021-06-05 19:56:44,992 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:45.321
+!MESSAGE 2021-06-05 19:56:45,321 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:45.527
+!MESSAGE 2021-06-05 19:56:45,527 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:45.542
+!MESSAGE 2021-06-05 19:56:45,542 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:45.542
+!MESSAGE 2021-06-05 19:56:45,542 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:45.542
+!MESSAGE 2021-06-05 19:56:45,542 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:45.683
+!MESSAGE 2021-06-05 19:56:45,683 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:46.068
+!MESSAGE 2021-06-05 19:56:46,067 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:56:46.258
+!MESSAGE 2021-06-05 19:56:46,257 INFO  org.talend.designer.core.runprocess.Processor  - Command line: C:/Program Files/Java/jdk-11.0.11/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/salman/Desktop/Talend_WS/LOCAL_PROJECT/poms/jobs/process/use_tmap_0.1/target/classpath.jar; local_project.use_tmap_0_1.use_tMap --context=Default --stat_port=3733 %*
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:29.876
+!MESSAGE 2021-06-05 19:57:29,876 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:29.876
+!MESSAGE 2021-06-05 19:57:29,876 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:29.876
+!MESSAGE 2021-06-05 19:57:29,876 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:29.892
+!MESSAGE 2021-06-05 19:57:29,892 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:29.892
+!MESSAGE 2021-06-05 19:57:29,892 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:29.892
+!MESSAGE 2021-06-05 19:57:29,892 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:29.892
+!MESSAGE 2021-06-05 19:57:29,892 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:29.892
+!MESSAGE 2021-06-05 19:57:29,892 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:29.907
+!MESSAGE 2021-06-05 19:57:29,907 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:30.267
+!MESSAGE 2021-06-05 19:57:30,266 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:30.451
+!MESSAGE 2021-06-05 19:57:30,451 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:30.692
+!MESSAGE 2021-06-05 19:57:30,692 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:30.692
+!MESSAGE 2021-06-05 19:57:30,692 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:30.708
+!MESSAGE 2021-06-05 19:57:30,708 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:30.708
+!MESSAGE 2021-06-05 19:57:30,708 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:30.801
+!MESSAGE 2021-06-05 19:57:30,801 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:31.161
+!MESSAGE 2021-06-05 19:57:31,161 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:31.285
+!MESSAGE 2021-06-05 19:57:31,285 INFO  org.talend.designer.core.runprocess.Processor  - Command line: C:/Program Files/Java/jdk-11.0.11/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/salman/Desktop/Talend_WS/LOCAL_PROJECT/poms/jobs/process/use_tmap_0.1/target/classpath.jar; local_project.use_tmap_0_1.use_tMap --context=Default --stat_port=3569 %*
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:56.781
+!MESSAGE 2021-06-05 19:57:56,781 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:56.797
+!MESSAGE 2021-06-05 19:57:56,797 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:56.797
+!MESSAGE 2021-06-05 19:57:56,797 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:56.797
+!MESSAGE 2021-06-05 19:57:56,797 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:56.797
+!MESSAGE 2021-06-05 19:57:56,797 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:56.813
+!MESSAGE 2021-06-05 19:57:56,813 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:56.813
+!MESSAGE 2021-06-05 19:57:56,813 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:56.813
+!MESSAGE 2021-06-05 19:57:56,813 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:57:56.813
+!MESSAGE 2021-06-05 19:57:56,813 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:57.265
+!MESSAGE 2021-06-05 19:57:57,264 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:57.532
+!MESSAGE 2021-06-05 19:57:57,532 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:57.923
+!MESSAGE 2021-06-05 19:57:57,923 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:57.923
+!MESSAGE 2021-06-05 19:57:57,923 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:57.923
+!MESSAGE 2021-06-05 19:57:57,923 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:57.923
+!MESSAGE 2021-06-05 19:57:57,923 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:58.048
+!MESSAGE 2021-06-05 19:57:58,048 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:58.408
+!MESSAGE 2021-06-05 19:57:58,407 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:57:58.582
+!MESSAGE 2021-06-05 19:57:58,582 INFO  org.talend.designer.core.runprocess.Processor  - Command line: C:/Program Files/Java/jdk-11.0.11/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/salman/Desktop/Talend_WS/LOCAL_PROJECT/poms/jobs/process/use_tmap_0.1/target/classpath.jar; local_project.use_tmap_0_1.use_tMap --context=Default --stat_port=4007 %*
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:59:32.401
+!MESSAGE 2021-06-05 19:59:32,400 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:59:32.405
+!MESSAGE 2021-06-05 19:59:32,404 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:59:32.408
+!MESSAGE 2021-06-05 19:59:32,407 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:59:32.412
+!MESSAGE 2021-06-05 19:59:32,411 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:59:32.416
+!MESSAGE 2021-06-05 19:59:32,415 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:59:32.420
+!MESSAGE 2021-06-05 19:59:32,419 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:59:32.425
+!MESSAGE 2021-06-05 19:59:32,424 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:59:32.428
+!MESSAGE 2021-06-05 19:59:32,427 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 19:59:32.432
+!MESSAGE 2021-06-05 19:59:32,431 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:59:32.782
+!MESSAGE 2021-06-05 19:59:32,781 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:59:32.965
+!MESSAGE 2021-06-05 19:59:32,964 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:59:33.235
+!MESSAGE 2021-06-05 19:59:33,234 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:59:33.237
+!MESSAGE 2021-06-05 19:59:33,236 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:59:33.240
+!MESSAGE 2021-06-05 19:59:33,239 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:59:33.241
+!MESSAGE 2021-06-05 19:59:33,240 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_USE_TMAP_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:59:33.353
+!MESSAGE 2021-06-05 19:59:33,352 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:59:33.752
+!MESSAGE 2021-06-05 19:59:33,751 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:7.3.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-06-05 19:59:33.912
+!MESSAGE 2021-06-05 19:59:33,912 INFO  org.talend.designer.core.runprocess.Processor  - Command line: C:/Program Files/Java/jdk-11.0.11/bin/java.exe -Xms256M -Xmx1024M -Dtalend.component.manager.m2.repository=C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/.m2/repository -Dfile.encoding=UTF-8 -Dencryption.keys.file=/C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/configuration/studio.keys -cp C:/Users/salman/Desktop/Talend_WS/LOCAL_PROJECT/poms/jobs/process/use_tmap_0.1/target/classpath.jar; local_project.use_tmap_0_1.use_tMap --context=Default --stat_port=3360 %*
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 20:09:32.880
+!MESSAGE 2021-06-05 20:09:32,864 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 20:09:32.880
+!MESSAGE 2021-06-05 20:09:32,880 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 20:09:32.880
+!MESSAGE 2021-06-05 20:09:32,880 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
+
+!ENTRY org.talend.platform.logging 4 0 2021-06-05 20:09:32.927
+!MESSAGE 2021-06-05 20:09:32,927 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - try to load wrong item:Localhost_TestDb / Db Connections
+
