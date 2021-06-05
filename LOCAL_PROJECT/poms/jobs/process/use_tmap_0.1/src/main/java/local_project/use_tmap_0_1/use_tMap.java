@@ -290,6 +290,26 @@ public class use_tMap implements TalendJob {
 		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tMap_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tLogRow_5_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tLogRow_3_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -355,6 +375,478 @@ public class use_tMap implements TalendJob {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
 				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public static class out2Struct implements routines.system.IPersistableRow<out2Struct> {
+		final static byte[] commonByteArrayLock_LOCAL_PROJECT_use_tMap = new byte[0];
+		static byte[] commonByteArray_LOCAL_PROJECT_use_tMap = new byte[0];
+
+		public Integer empid;
+
+		public Integer getEmpid() {
+			return this.empid;
+		}
+
+		public String fname;
+
+		public String getFname() {
+			return this.fname;
+		}
+
+		public String mname;
+
+		public String getMname() {
+			return this.mname;
+		}
+
+		public String lname;
+
+		public String getLname() {
+			return this.lname;
+		}
+
+		public java.util.Date dob;
+
+		public java.util.Date getDob() {
+			return this.dob;
+		}
+
+		public String gender;
+
+		public String getGender() {
+			return this.gender;
+		}
+
+		public String deptname;
+
+		public String getDeptname() {
+			return this.deptname;
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_LOCAL_PROJECT_use_tMap.length) {
+					if (length < 1024 && commonByteArray_LOCAL_PROJECT_use_tMap.length == 0) {
+						commonByteArray_LOCAL_PROJECT_use_tMap = new byte[1024];
+					} else {
+						commonByteArray_LOCAL_PROJECT_use_tMap = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_LOCAL_PROJECT_use_tMap, 0, length);
+				strReturn = new String(commonByteArray_LOCAL_PROJECT_use_tMap, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_LOCAL_PROJECT_use_tMap) {
+
+				try {
+
+					int length = 0;
+
+					this.empid = readInteger(dis);
+
+					this.fname = readString(dis);
+
+					this.mname = readString(dis);
+
+					this.lname = readString(dis);
+
+					this.dob = readDate(dis);
+
+					this.gender = readString(dis);
+
+					this.deptname = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.empid, dos);
+
+				// String
+
+				writeString(this.fname, dos);
+
+				// String
+
+				writeString(this.mname, dos);
+
+				// String
+
+				writeString(this.lname, dos);
+
+				// java.util.Date
+
+				writeDate(this.dob, dos);
+
+				// String
+
+				writeString(this.gender, dos);
+
+				// String
+
+				writeString(this.deptname, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("empid=" + String.valueOf(empid));
+			sb.append(",fname=" + fname);
+			sb.append(",mname=" + mname);
+			sb.append(",lname=" + lname);
+			sb.append(",dob=" + String.valueOf(dob));
+			sb.append(",gender=" + gender);
+			sb.append(",deptname=" + deptname);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(out2Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class row4Struct implements routines.system.IPersistableRow<row4Struct> {
+		final static byte[] commonByteArrayLock_LOCAL_PROJECT_use_tMap = new byte[0];
+		static byte[] commonByteArray_LOCAL_PROJECT_use_tMap = new byte[0];
+
+		public Integer empid;
+
+		public Integer getEmpid() {
+			return this.empid;
+		}
+
+		public String fname;
+
+		public String getFname() {
+			return this.fname;
+		}
+
+		public String mname;
+
+		public String getMname() {
+			return this.mname;
+		}
+
+		public String lname;
+
+		public String getLname() {
+			return this.lname;
+		}
+
+		public java.util.Date dob;
+
+		public java.util.Date getDob() {
+			return this.dob;
+		}
+
+		public String gender;
+
+		public String getGender() {
+			return this.gender;
+		}
+
+		public String deptname;
+
+		public String getDeptname() {
+			return this.deptname;
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_LOCAL_PROJECT_use_tMap.length) {
+					if (length < 1024 && commonByteArray_LOCAL_PROJECT_use_tMap.length == 0) {
+						commonByteArray_LOCAL_PROJECT_use_tMap = new byte[1024];
+					} else {
+						commonByteArray_LOCAL_PROJECT_use_tMap = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_LOCAL_PROJECT_use_tMap, 0, length);
+				strReturn = new String(commonByteArray_LOCAL_PROJECT_use_tMap, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_LOCAL_PROJECT_use_tMap) {
+
+				try {
+
+					int length = 0;
+
+					this.empid = readInteger(dis);
+
+					this.fname = readString(dis);
+
+					this.mname = readString(dis);
+
+					this.lname = readString(dis);
+
+					this.dob = readDate(dis);
+
+					this.gender = readString(dis);
+
+					this.deptname = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.empid, dos);
+
+				// String
+
+				writeString(this.fname, dos);
+
+				// String
+
+				writeString(this.mname, dos);
+
+				// String
+
+				writeString(this.lname, dos);
+
+				// java.util.Date
+
+				writeDate(this.dob, dos);
+
+				// String
+
+				writeString(this.gender, dos);
+
+				// String
+
+				writeString(this.deptname, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("empid=" + String.valueOf(empid));
+			sb.append(",fname=" + fname);
+			sb.append(",mname=" + mname);
+			sb.append(",lname=" + lname);
+			sb.append(",dob=" + String.valueOf(dob));
+			sb.append(",gender=" + gender);
+			sb.append(",deptname=" + deptname);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row4Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
 
 	}
 
@@ -1524,8 +2016,222 @@ public class use_tMap implements TalendJob {
 
 				row1Struct row1 = new row1Struct();
 				rejectsStruct rejects = new rejectsStruct();
+				rejectsStruct row4 = rejects;
+				out2Struct out2 = new out2Struct();
 				filteredStruct filtered = new filteredStruct();
 				out1Struct out1 = new out1Struct();
+
+				/**
+				 * [tLogRow_5 begin ] start
+				 */
+
+				ok_Hash.put("tLogRow_5", false);
+				start_Hash.put("tLogRow_5", System.currentTimeMillis());
+
+				currentComponent = "tLogRow_5";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "out2");
+				}
+
+				int tos_count_tLogRow_5 = 0;
+
+				///////////////////////
+
+				class Util_tLogRow_5 {
+
+					String[] des_top = { ".", ".", "-", "+" };
+
+					String[] des_head = { "|=", "=|", "-", "+" };
+
+					String[] des_bottom = { "'", "'", "-", "+" };
+
+					String name = "";
+
+					java.util.List<String[]> list = new java.util.ArrayList<String[]>();
+
+					int[] colLengths = new int[7];
+
+					public void addRow(String[] row) {
+
+						for (int i = 0; i < 7; i++) {
+							if (row[i] != null) {
+								colLengths[i] = Math.max(colLengths[i], row[i].length());
+							}
+						}
+						list.add(row);
+					}
+
+					public void setTableName(String name) {
+
+						this.name = name;
+					}
+
+					public StringBuilder format() {
+
+						StringBuilder sb = new StringBuilder();
+
+						sb.append(print(des_top));
+
+						int totals = 0;
+						for (int i = 0; i < colLengths.length; i++) {
+							totals = totals + colLengths[i];
+						}
+
+						// name
+						sb.append("|");
+						int k = 0;
+						for (k = 0; k < (totals + 6 - name.length()) / 2; k++) {
+							sb.append(' ');
+						}
+						sb.append(name);
+						for (int i = 0; i < totals + 6 - name.length() - k; i++) {
+							sb.append(' ');
+						}
+						sb.append("|\n");
+
+						// head and rows
+						sb.append(print(des_head));
+						for (int i = 0; i < list.size(); i++) {
+
+							String[] row = list.get(i);
+
+							java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
+
+							StringBuilder sbformat = new StringBuilder();
+							sbformat.append("|%1$-");
+							sbformat.append(colLengths[0]);
+							sbformat.append("s");
+
+							sbformat.append("|%2$-");
+							sbformat.append(colLengths[1]);
+							sbformat.append("s");
+
+							sbformat.append("|%3$-");
+							sbformat.append(colLengths[2]);
+							sbformat.append("s");
+
+							sbformat.append("|%4$-");
+							sbformat.append(colLengths[3]);
+							sbformat.append("s");
+
+							sbformat.append("|%5$-");
+							sbformat.append(colLengths[4]);
+							sbformat.append("s");
+
+							sbformat.append("|%6$-");
+							sbformat.append(colLengths[5]);
+							sbformat.append("s");
+
+							sbformat.append("|%7$-");
+							sbformat.append(colLengths[6]);
+							sbformat.append("s");
+
+							sbformat.append("|\n");
+
+							formatter.format(sbformat.toString(), (Object[]) row);
+
+							sb.append(formatter.toString());
+							if (i == 0)
+								sb.append(print(des_head)); // print the head
+						}
+
+						// end
+						sb.append(print(des_bottom));
+						return sb;
+					}
+
+					private StringBuilder print(String[] fillChars) {
+						StringBuilder sb = new StringBuilder();
+						// first column
+						sb.append(fillChars[0]);
+						for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[2] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[3] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[4] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[5] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						// last column
+						for (int i = 0; i < colLengths[6] - fillChars[1].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[1]);
+						sb.append("\n");
+						return sb;
+					}
+
+					public boolean isTableEmpty() {
+						if (list.size() > 1)
+							return false;
+						return true;
+					}
+				}
+				Util_tLogRow_5 util_tLogRow_5 = new Util_tLogRow_5();
+				util_tLogRow_5.setTableName("tLogRow_5");
+				util_tLogRow_5
+						.addRow(new String[] { "empid", "fname", "mname", "lname", "dob", "gender", "deptname", });
+				StringBuilder strBuffer_tLogRow_5 = null;
+				int nb_line_tLogRow_5 = 0;
+///////////////////////    			
+
+				/**
+				 * [tLogRow_5 begin ] stop
+				 */
+
+				/**
+				 * [tMap_2 begin ] start
+				 */
+
+				ok_Hash.put("tMap_2", false);
+				start_Hash.put("tMap_2", System.currentTimeMillis());
+
+				currentComponent = "tMap_2";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row4");
+				}
+
+				int tos_count_tMap_2 = 0;
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_2__Struct {
+				}
+				Var__tMap_2__Struct Var__tMap_2 = new Var__tMap_2__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+				out2Struct out2_tmp = new out2Struct();
+// ###############################
+
+				/**
+				 * [tMap_2 begin ] stop
+				 */
 
 				/**
 				 * [tLogRow_2 begin ] start
@@ -2123,7 +2829,7 @@ public class use_tMap implements TalendJob {
 				String dbUser_tDBInput_1 = "talenduser";
 
 				final String decryptedPassword_tDBInput_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:NHKFuoAUupgLH5beqVNX73XC0bZGe7mFLQGvD+Db8X1n");
+						.decryptPassword("enc:routine.encryption.key.v1:sBF5sHVOPXrHDfhakU1v2sRhPC0AihiM3tMTycIW4Dye");
 
 				String dbPwd_tDBInput_1 = decryptedPassword_tDBInput_1;
 
@@ -2524,6 +3230,8 @@ public class use_tMap implements TalendJob {
 
 ///////////////////////    			
 
+							row4 = rejects;
+
 							tos_count_tLogRow_2++;
 
 							/**
@@ -2538,6 +3246,170 @@ public class use_tMap implements TalendJob {
 
 							/**
 							 * [tLogRow_2 process_data_begin ] stop
+							 */
+
+							/**
+							 * [tMap_2 main ] start
+							 */
+
+							currentComponent = "tMap_2";
+
+							if (execStat) {
+								runStat.updateStatOnConnection(iterateId, 1, 1, "row4");
+							}
+
+							boolean hasCasePrimitiveKeyWithNull_tMap_2 = false;
+
+							// ###############################
+							// # Input tables (lookups)
+							boolean rejectedInnerJoin_tMap_2 = false;
+							boolean mainRowRejected_tMap_2 = false;
+
+							// ###############################
+							{ // start of Var scope
+
+								// ###############################
+								// # Vars tables
+
+								Var__tMap_2__Struct Var = Var__tMap_2;// ###############################
+								// ###############################
+								// # Output tables
+
+								out2 = null;
+
+// # Output table : 'out2'
+// # Filter conditions 
+								if (
+
+								"hosang".equals(row4.mname)
+
+								) {
+									out2_tmp.empid = row4.empid;
+									out2_tmp.fname = row4.fname;
+									out2_tmp.mname = row4.mname;
+									out2_tmp.lname = row4.lname;
+									out2_tmp.dob = row4.dob;
+									out2_tmp.gender = row4.gender;
+									out2_tmp.deptname = row4.deptname;
+									out2 = out2_tmp;
+								} // closing filter/reject
+// ###############################
+
+							} // end of Var scope
+
+							rejectedInnerJoin_tMap_2 = false;
+
+							tos_count_tMap_2++;
+
+							/**
+							 * [tMap_2 main ] stop
+							 */
+
+							/**
+							 * [tMap_2 process_data_begin ] start
+							 */
+
+							currentComponent = "tMap_2";
+
+							/**
+							 * [tMap_2 process_data_begin ] stop
+							 */
+// Start of branch "out2"
+							if (out2 != null) {
+
+								/**
+								 * [tLogRow_5 main ] start
+								 */
+
+								currentComponent = "tLogRow_5";
+
+								if (execStat) {
+									runStat.updateStatOnConnection(iterateId, 1, 1, "out2");
+								}
+
+///////////////////////		
+
+								String[] row_tLogRow_5 = new String[7];
+
+								if (out2.empid != null) { //
+									row_tLogRow_5[0] = String.valueOf(out2.empid);
+
+								} //
+
+								if (out2.fname != null) { //
+									row_tLogRow_5[1] = String.valueOf(out2.fname);
+
+								} //
+
+								if (out2.mname != null) { //
+									row_tLogRow_5[2] = String.valueOf(out2.mname);
+
+								} //
+
+								if (out2.lname != null) { //
+									row_tLogRow_5[3] = String.valueOf(out2.lname);
+
+								} //
+
+								if (out2.dob != null) { //
+									row_tLogRow_5[4] = FormatterUtils.format_Date(out2.dob, "yyyy-MM-dd");
+
+								} //
+
+								if (out2.gender != null) { //
+									row_tLogRow_5[5] = String.valueOf(out2.gender);
+
+								} //
+
+								if (out2.deptname != null) { //
+									row_tLogRow_5[6] = String.valueOf(out2.deptname);
+
+								} //
+
+								util_tLogRow_5.addRow(row_tLogRow_5);
+								nb_line_tLogRow_5++;
+//////
+
+//////                    
+
+///////////////////////    			
+
+								tos_count_tLogRow_5++;
+
+								/**
+								 * [tLogRow_5 main ] stop
+								 */
+
+								/**
+								 * [tLogRow_5 process_data_begin ] start
+								 */
+
+								currentComponent = "tLogRow_5";
+
+								/**
+								 * [tLogRow_5 process_data_begin ] stop
+								 */
+
+								/**
+								 * [tLogRow_5 process_data_end ] start
+								 */
+
+								currentComponent = "tLogRow_5";
+
+								/**
+								 * [tLogRow_5 process_data_end ] stop
+								 */
+
+							} // End of branch "out2"
+
+							/**
+							 * [tMap_2 process_data_end ] start
+							 */
+
+							currentComponent = "tMap_2";
+
+							/**
+							 * [tMap_2 process_data_end ] stop
 							 */
 
 							/**
@@ -2844,6 +3716,61 @@ public class use_tMap implements TalendJob {
 				 */
 
 				/**
+				 * [tMap_2 end ] start
+				 */
+
+				currentComponent = "tMap_2";
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row4");
+				}
+
+				ok_Hash.put("tMap_2", true);
+				end_Hash.put("tMap_2", System.currentTimeMillis());
+
+				/**
+				 * [tMap_2 end ] stop
+				 */
+
+				/**
+				 * [tLogRow_5 end ] start
+				 */
+
+				currentComponent = "tLogRow_5";
+
+//////
+
+				java.io.PrintStream consoleOut_tLogRow_5 = null;
+				if (globalMap.get("tLogRow_CONSOLE") != null) {
+					consoleOut_tLogRow_5 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+				} else {
+					consoleOut_tLogRow_5 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_5);
+				}
+
+				consoleOut_tLogRow_5.println(util_tLogRow_5.format().toString());
+				consoleOut_tLogRow_5.flush();
+//////
+				globalMap.put("tLogRow_5_NB_LINE", nb_line_tLogRow_5);
+
+///////////////////////    			
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "out2");
+				}
+
+				ok_Hash.put("tLogRow_5", true);
+				end_Hash.put("tLogRow_5", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_5 end ] stop
+				 */
+
+				/**
 				 * [tLogRow_3 end ] start
 				 */
 
@@ -2961,6 +3888,26 @@ public class use_tMap implements TalendJob {
 
 				/**
 				 * [tLogRow_2 finally ] stop
+				 */
+
+				/**
+				 * [tMap_2 finally ] start
+				 */
+
+				currentComponent = "tMap_2";
+
+				/**
+				 * [tMap_2 finally ] stop
+				 */
+
+				/**
+				 * [tLogRow_5 finally ] start
+				 */
+
+				currentComponent = "tLogRow_5";
+
+				/**
+				 * [tLogRow_5 finally ] stop
 				 */
 
 				/**
@@ -3300,7 +4247,7 @@ public class use_tMap implements TalendJob {
 				String dbUser_tDBInput_2 = "talenduser";
 
 				final String decryptedPassword_tDBInput_2 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:wwxGKLZE88YiJhuBlqyYTYW8nLtFNHnxQf8OcxomdzEB");
+						.decryptPassword("enc:routine.encryption.key.v1:gI0lDIcTK0WQl9Qu1pM+hBdwnqRP0/LFAuiiFROKUAhN");
 
 				String dbPwd_tDBInput_2 = decryptedPassword_tDBInput_2;
 
@@ -3846,7 +4793,7 @@ public class use_tMap implements TalendJob {
 				String dbUser_tDBInput_3 = "talenduser";
 
 				final String decryptedPassword_tDBInput_3 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:1KEpLWQrnppEcI7AgQm4GEAm4hN1qvhpN8T8Od2chfaB");
+						.decryptPassword("enc:routine.encryption.key.v1:Z5prfGcuwxWZ5OftWqxOb3NiHzJ7686RCr3+qOPIY3ew");
 
 				String dbPwd_tDBInput_3 = decryptedPassword_tDBInput_3;
 
@@ -4437,6 +5384,6 @@ public class use_tMap implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 130668 characters generated by Talend Open Studio for Data Integration on the
- * June 6, 2021 at 12:04:46 AM IST
+ * 156192 characters generated by Talend Open Studio for Data Integration on the
+ * June 6, 2021 at 12:38:17 AM IST
  ************************************************************************************************/
