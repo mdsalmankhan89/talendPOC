@@ -290,7 +290,27 @@ public class useStringHandling implements TalendJob {
 		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tLogRow_1_error(Exception exception, String errorComponent,
+	public void tUniqRow_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tMap_4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tLogRow_7_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -380,6 +400,472 @@ public class useStringHandling implements TalendJob {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
 				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public static class out2Struct implements routines.system.IPersistableRow<out2Struct> {
+		final static byte[] commonByteArrayLock_LOCAL_PROJECT_useStringHandling = new byte[0];
+		static byte[] commonByteArray_LOCAL_PROJECT_useStringHandling = new byte[0];
+
+		public Integer empid;
+
+		public Integer getEmpid() {
+			return this.empid;
+		}
+
+		public String FullName;
+
+		public String getFullName() {
+			return this.FullName;
+		}
+
+		public java.util.Date dob;
+
+		public java.util.Date getDob() {
+			return this.dob;
+		}
+
+		public Long age;
+
+		public Long getAge() {
+			return this.age;
+		}
+
+		public String deptname;
+
+		public String getDeptname() {
+			return this.deptname;
+		}
+
+		public String gender;
+
+		public String getGender() {
+			return this.gender;
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_LOCAL_PROJECT_useStringHandling.length) {
+					if (length < 1024 && commonByteArray_LOCAL_PROJECT_useStringHandling.length == 0) {
+						commonByteArray_LOCAL_PROJECT_useStringHandling = new byte[1024];
+					} else {
+						commonByteArray_LOCAL_PROJECT_useStringHandling = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_LOCAL_PROJECT_useStringHandling, 0, length);
+				strReturn = new String(commonByteArray_LOCAL_PROJECT_useStringHandling, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_LOCAL_PROJECT_useStringHandling) {
+
+				try {
+
+					int length = 0;
+
+					this.empid = readInteger(dis);
+
+					this.FullName = readString(dis);
+
+					this.dob = readDate(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.age = null;
+					} else {
+						this.age = dis.readLong();
+					}
+
+					this.deptname = readString(dis);
+
+					this.gender = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.empid, dos);
+
+				// String
+
+				writeString(this.FullName, dos);
+
+				// java.util.Date
+
+				writeDate(this.dob, dos);
+
+				// Long
+
+				if (this.age == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.age);
+				}
+
+				// String
+
+				writeString(this.deptname, dos);
+
+				// String
+
+				writeString(this.gender, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("empid=" + String.valueOf(empid));
+			sb.append(",FullName=" + FullName);
+			sb.append(",dob=" + String.valueOf(dob));
+			sb.append(",age=" + String.valueOf(age));
+			sb.append(",deptname=" + deptname);
+			sb.append(",gender=" + gender);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(out2Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class row7Struct implements routines.system.IPersistableRow<row7Struct> {
+		final static byte[] commonByteArrayLock_LOCAL_PROJECT_useStringHandling = new byte[0];
+		static byte[] commonByteArray_LOCAL_PROJECT_useStringHandling = new byte[0];
+
+		public Integer empid;
+
+		public Integer getEmpid() {
+			return this.empid;
+		}
+
+		public String FullName;
+
+		public String getFullName() {
+			return this.FullName;
+		}
+
+		public java.util.Date dob;
+
+		public java.util.Date getDob() {
+			return this.dob;
+		}
+
+		public Long age;
+
+		public Long getAge() {
+			return this.age;
+		}
+
+		public String deptname;
+
+		public String getDeptname() {
+			return this.deptname;
+		}
+
+		public String gender;
+
+		public String getGender() {
+			return this.gender;
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_LOCAL_PROJECT_useStringHandling.length) {
+					if (length < 1024 && commonByteArray_LOCAL_PROJECT_useStringHandling.length == 0) {
+						commonByteArray_LOCAL_PROJECT_useStringHandling = new byte[1024];
+					} else {
+						commonByteArray_LOCAL_PROJECT_useStringHandling = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_LOCAL_PROJECT_useStringHandling, 0, length);
+				strReturn = new String(commonByteArray_LOCAL_PROJECT_useStringHandling, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_LOCAL_PROJECT_useStringHandling) {
+
+				try {
+
+					int length = 0;
+
+					this.empid = readInteger(dis);
+
+					this.FullName = readString(dis);
+
+					this.dob = readDate(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.age = null;
+					} else {
+						this.age = dis.readLong();
+					}
+
+					this.deptname = readString(dis);
+
+					this.gender = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.empid, dos);
+
+				// String
+
+				writeString(this.FullName, dos);
+
+				// java.util.Date
+
+				writeDate(this.dob, dos);
+
+				// Long
+
+				if (this.age == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.age);
+				}
+
+				// String
+
+				writeString(this.deptname, dos);
+
+				// String
+
+				writeString(this.gender, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("empid=" + String.valueOf(empid));
+			sb.append(",FullName=" + FullName);
+			sb.append(",dob=" + String.valueOf(dob));
+			sb.append(",age=" + String.valueOf(age));
+			sb.append(",deptname=" + deptname);
+			sb.append(",gender=" + gender);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row7Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
 
 	}
 
@@ -1789,6 +2275,8 @@ public class useStringHandling implements TalendJob {
 				out1Struct out1 = new out1Struct();
 				row4Struct row4 = new row4Struct();
 				row5Struct row5 = new row5Struct();
+				row7Struct row7 = new row7Struct();
+				out2Struct out2 = new out2Struct();
 
 				/**
 				 * [tSortRow_1_SortOut begin ] start
@@ -1899,7 +2387,7 @@ public class useStringHandling implements TalendJob {
 				String dbUser_tDBInput_1 = "talenduser";
 
 				final String decryptedPassword_tDBInput_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:GVF/x7RdQ7sU+n6oUAKwv7AIHjWEfCHMGvvHFW1s/ozH");
+						.decryptPassword("enc:routine.encryption.key.v1:JdV+srIbyW9zlTYB2I+GAY8c5vtz4ExIjjXwc7ECwUap");
 
 				String dbPwd_tDBInput_1 = decryptedPassword_tDBInput_1;
 
@@ -2307,23 +2795,23 @@ public class useStringHandling implements TalendJob {
 				 */
 
 				/**
-				 * [tLogRow_1 begin ] start
+				 * [tLogRow_7 begin ] start
 				 */
 
-				ok_Hash.put("tLogRow_1", false);
-				start_Hash.put("tLogRow_1", System.currentTimeMillis());
+				ok_Hash.put("tLogRow_7", false);
+				start_Hash.put("tLogRow_7", System.currentTimeMillis());
 
-				currentComponent = "tLogRow_1";
+				currentComponent = "tLogRow_7";
 
 				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row5");
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "out2");
 				}
 
-				int tos_count_tLogRow_1 = 0;
+				int tos_count_tLogRow_7 = 0;
 
 				///////////////////////
 
-				class Util_tLogRow_1 {
+				class Util_tLogRow_7 {
 
 					String[] des_top = { ".", ".", "-", "+" };
 
@@ -2463,15 +2951,120 @@ public class useStringHandling implements TalendJob {
 						return true;
 					}
 				}
-				Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
-				util_tLogRow_1.setTableName("tLogRow_1");
-				util_tLogRow_1.addRow(new String[] { "empid", "FullName", "dob", "age", "deptname", "gender", });
-				StringBuilder strBuffer_tLogRow_1 = null;
-				int nb_line_tLogRow_1 = 0;
+				Util_tLogRow_7 util_tLogRow_7 = new Util_tLogRow_7();
+				util_tLogRow_7.setTableName("tLogRow_7");
+				util_tLogRow_7.addRow(new String[] { "empid", "FullName", "dob", "age", "deptname", "gender", });
+				StringBuilder strBuffer_tLogRow_7 = null;
+				int nb_line_tLogRow_7 = 0;
 ///////////////////////    			
 
 				/**
-				 * [tLogRow_1 begin ] stop
+				 * [tLogRow_7 begin ] stop
+				 */
+
+				/**
+				 * [tMap_4 begin ] start
+				 */
+
+				ok_Hash.put("tMap_4", false);
+				start_Hash.put("tMap_4", System.currentTimeMillis());
+
+				currentComponent = "tMap_4";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row7");
+				}
+
+				int tos_count_tMap_4 = 0;
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_4__Struct {
+				}
+				Var__tMap_4__Struct Var__tMap_4 = new Var__tMap_4__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+				out2Struct out2_tmp = new out2Struct();
+// ###############################
+
+				/**
+				 * [tMap_4 begin ] stop
+				 */
+
+				/**
+				 * [tUniqRow_1 begin ] start
+				 */
+
+				ok_Hash.put("tUniqRow_1", false);
+				start_Hash.put("tUniqRow_1", System.currentTimeMillis());
+
+				currentComponent = "tUniqRow_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row5");
+				}
+
+				int tos_count_tUniqRow_1 = 0;
+
+				class KeyStruct_tUniqRow_1 {
+
+					private static final int DEFAULT_HASHCODE = 1;
+					private static final int PRIME = 31;
+					private int hashCode = DEFAULT_HASHCODE;
+					public boolean hashCodeDirty = true;
+
+					String gender;
+
+					@Override
+					public int hashCode() {
+						if (this.hashCodeDirty) {
+							final int prime = PRIME;
+							int result = DEFAULT_HASHCODE;
+
+							result = prime * result + ((this.gender == null) ? 0 : this.gender.hashCode());
+
+							this.hashCode = result;
+							this.hashCodeDirty = false;
+						}
+						return this.hashCode;
+					}
+
+					@Override
+					public boolean equals(Object obj) {
+						if (this == obj)
+							return true;
+						if (obj == null)
+							return false;
+						if (getClass() != obj.getClass())
+							return false;
+						final KeyStruct_tUniqRow_1 other = (KeyStruct_tUniqRow_1) obj;
+
+						if (this.gender == null) {
+							if (other.gender != null)
+								return false;
+
+						} else if (!this.gender.equals(other.gender))
+
+							return false;
+
+						return true;
+					}
+
+				}
+
+				int nb_uniques_tUniqRow_1 = 0;
+				int nb_duplicates_tUniqRow_1 = 0;
+				KeyStruct_tUniqRow_1 finder_tUniqRow_1 = new KeyStruct_tUniqRow_1();
+				java.util.Set<KeyStruct_tUniqRow_1> keystUniqRow_1 = new java.util.HashSet<KeyStruct_tUniqRow_1>();
+
+				/**
+				 * [tUniqRow_1 begin ] stop
 				 */
 
 				/**
@@ -2628,81 +3221,226 @@ public class useStringHandling implements TalendJob {
 					if (row5 != null) {
 
 						/**
-						 * [tLogRow_1 main ] start
+						 * [tUniqRow_1 main ] start
 						 */
 
-						currentComponent = "tLogRow_1";
+						currentComponent = "tUniqRow_1";
 
 						if (execStat) {
 							runStat.updateStatOnConnection(iterateId, 1, 1, "row5");
 						}
 
+						row7 = null;
+						if (row5.gender == null) {
+							finder_tUniqRow_1.gender = null;
+						} else {
+							finder_tUniqRow_1.gender = row5.gender.toLowerCase();
+						}
+						finder_tUniqRow_1.hashCodeDirty = true;
+						if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
+							KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
+
+							if (row5.gender == null) {
+								new_tUniqRow_1.gender = null;
+							} else {
+								new_tUniqRow_1.gender = row5.gender.toLowerCase();
+							}
+
+							keystUniqRow_1.add(new_tUniqRow_1);
+							if (row7 == null) {
+
+								row7 = new row7Struct();
+							}
+							row7.empid = row5.empid;
+							row7.FullName = row5.FullName;
+							row7.dob = row5.dob;
+							row7.age = row5.age;
+							row7.deptname = row5.deptname;
+							row7.gender = row5.gender;
+							nb_uniques_tUniqRow_1++;
+						} else {
+							nb_duplicates_tUniqRow_1++;
+						}
+
+						tos_count_tUniqRow_1++;
+
+						/**
+						 * [tUniqRow_1 main ] stop
+						 */
+
+						/**
+						 * [tUniqRow_1 process_data_begin ] start
+						 */
+
+						currentComponent = "tUniqRow_1";
+
+						/**
+						 * [tUniqRow_1 process_data_begin ] stop
+						 */
+// Start of branch "row7"
+						if (row7 != null) {
+
+							/**
+							 * [tMap_4 main ] start
+							 */
+
+							currentComponent = "tMap_4";
+
+							if (execStat) {
+								runStat.updateStatOnConnection(iterateId, 1, 1, "row7");
+							}
+
+							boolean hasCasePrimitiveKeyWithNull_tMap_4 = false;
+
+							// ###############################
+							// # Input tables (lookups)
+							boolean rejectedInnerJoin_tMap_4 = false;
+							boolean mainRowRejected_tMap_4 = false;
+
+							// ###############################
+							{ // start of Var scope
+
+								// ###############################
+								// # Vars tables
+
+								Var__tMap_4__Struct Var = Var__tMap_4;// ###############################
+								// ###############################
+								// # Output tables
+
+								out2 = null;
+
+// # Output table : 'out2'
+								out2_tmp.empid = row7.empid;
+								out2_tmp.FullName = StringHandling.UPCASE(row7.FullName);
+								out2_tmp.dob = row7.dob;
+								out2_tmp.age = row7.age;
+								out2_tmp.deptname = StringHandling.UPCASE(row7.deptname);
+								out2_tmp.gender = StringHandling.UPCASE(row7.gender);
+								out2 = out2_tmp;
+// ###############################
+
+							} // end of Var scope
+
+							rejectedInnerJoin_tMap_4 = false;
+
+							tos_count_tMap_4++;
+
+							/**
+							 * [tMap_4 main ] stop
+							 */
+
+							/**
+							 * [tMap_4 process_data_begin ] start
+							 */
+
+							currentComponent = "tMap_4";
+
+							/**
+							 * [tMap_4 process_data_begin ] stop
+							 */
+// Start of branch "out2"
+							if (out2 != null) {
+
+								/**
+								 * [tLogRow_7 main ] start
+								 */
+
+								currentComponent = "tLogRow_7";
+
+								if (execStat) {
+									runStat.updateStatOnConnection(iterateId, 1, 1, "out2");
+								}
+
 ///////////////////////		
 
-						String[] row_tLogRow_1 = new String[6];
+								String[] row_tLogRow_7 = new String[6];
 
-						if (row5.empid != null) { //
-							row_tLogRow_1[0] = String.valueOf(row5.empid);
+								if (out2.empid != null) { //
+									row_tLogRow_7[0] = String.valueOf(out2.empid);
 
-						} //
+								} //
 
-						if (row5.FullName != null) { //
-							row_tLogRow_1[1] = String.valueOf(row5.FullName);
+								if (out2.FullName != null) { //
+									row_tLogRow_7[1] = String.valueOf(out2.FullName);
 
-						} //
+								} //
 
-						if (row5.dob != null) { //
-							row_tLogRow_1[2] = FormatterUtils.format_Date(row5.dob, "dd-MM-yyyy");
+								if (out2.dob != null) { //
+									row_tLogRow_7[2] = FormatterUtils.format_Date(out2.dob, "dd-MM-yyyy");
 
-						} //
+								} //
 
-						if (row5.age != null) { //
-							row_tLogRow_1[3] = String.valueOf(row5.age);
+								if (out2.age != null) { //
+									row_tLogRow_7[3] = String.valueOf(out2.age);
 
-						} //
+								} //
 
-						if (row5.deptname != null) { //
-							row_tLogRow_1[4] = String.valueOf(row5.deptname);
+								if (out2.deptname != null) { //
+									row_tLogRow_7[4] = String.valueOf(out2.deptname);
 
-						} //
+								} //
 
-						if (row5.gender != null) { //
-							row_tLogRow_1[5] = String.valueOf(row5.gender);
+								if (out2.gender != null) { //
+									row_tLogRow_7[5] = String.valueOf(out2.gender);
 
-						} //
+								} //
 
-						util_tLogRow_1.addRow(row_tLogRow_1);
-						nb_line_tLogRow_1++;
+								util_tLogRow_7.addRow(row_tLogRow_7);
+								nb_line_tLogRow_7++;
 //////
 
 //////                    
 
 ///////////////////////    			
 
-						tos_count_tLogRow_1++;
+								tos_count_tLogRow_7++;
+
+								/**
+								 * [tLogRow_7 main ] stop
+								 */
+
+								/**
+								 * [tLogRow_7 process_data_begin ] start
+								 */
+
+								currentComponent = "tLogRow_7";
+
+								/**
+								 * [tLogRow_7 process_data_begin ] stop
+								 */
+
+								/**
+								 * [tLogRow_7 process_data_end ] start
+								 */
+
+								currentComponent = "tLogRow_7";
+
+								/**
+								 * [tLogRow_7 process_data_end ] stop
+								 */
+
+							} // End of branch "out2"
+
+							/**
+							 * [tMap_4 process_data_end ] start
+							 */
+
+							currentComponent = "tMap_4";
+
+							/**
+							 * [tMap_4 process_data_end ] stop
+							 */
+
+						} // End of branch "row7"
 
 						/**
-						 * [tLogRow_1 main ] stop
+						 * [tUniqRow_1 process_data_end ] start
 						 */
 
-						/**
-						 * [tLogRow_1 process_data_begin ] start
-						 */
-
-						currentComponent = "tLogRow_1";
+						currentComponent = "tUniqRow_1";
 
 						/**
-						 * [tLogRow_1 process_data_begin ] stop
-						 */
-
-						/**
-						 * [tLogRow_1 process_data_end ] start
-						 */
-
-						currentComponent = "tLogRow_1";
-
-						/**
-						 * [tLogRow_1 process_data_end ] stop
+						 * [tUniqRow_1 process_data_end ] stop
 						 */
 
 					} // End of branch "row5"
@@ -2766,37 +3504,78 @@ public class useStringHandling implements TalendJob {
 				 */
 
 				/**
-				 * [tLogRow_1 end ] start
+				 * [tUniqRow_1 end ] start
 				 */
 
-				currentComponent = "tLogRow_1";
+				currentComponent = "tUniqRow_1";
 
-//////
-
-				java.io.PrintStream consoleOut_tLogRow_1 = null;
-				if (globalMap.get("tLogRow_CONSOLE") != null) {
-					consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-				} else {
-					consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
-				}
-
-				consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
-				consoleOut_tLogRow_1.flush();
-//////
-				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
-
-///////////////////////    			
+				globalMap.put("tUniqRow_1_NB_UNIQUES", nb_uniques_tUniqRow_1);
+				globalMap.put("tUniqRow_1_NB_DUPLICATES", nb_duplicates_tUniqRow_1);
 
 				if (execStat) {
 					runStat.updateStat(resourceMap, iterateId, 2, 0, "row5");
 				}
 
-				ok_Hash.put("tLogRow_1", true);
-				end_Hash.put("tLogRow_1", System.currentTimeMillis());
+				ok_Hash.put("tUniqRow_1", true);
+				end_Hash.put("tUniqRow_1", System.currentTimeMillis());
 
 				/**
-				 * [tLogRow_1 end ] stop
+				 * [tUniqRow_1 end ] stop
+				 */
+
+				/**
+				 * [tMap_4 end ] start
+				 */
+
+				currentComponent = "tMap_4";
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row7");
+				}
+
+				ok_Hash.put("tMap_4", true);
+				end_Hash.put("tMap_4", System.currentTimeMillis());
+
+				/**
+				 * [tMap_4 end ] stop
+				 */
+
+				/**
+				 * [tLogRow_7 end ] start
+				 */
+
+				currentComponent = "tLogRow_7";
+
+//////
+
+				java.io.PrintStream consoleOut_tLogRow_7 = null;
+				if (globalMap.get("tLogRow_CONSOLE") != null) {
+					consoleOut_tLogRow_7 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+				} else {
+					consoleOut_tLogRow_7 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_7);
+				}
+
+				consoleOut_tLogRow_7.println(util_tLogRow_7.format().toString());
+				consoleOut_tLogRow_7.flush();
+//////
+				globalMap.put("tLogRow_7_NB_LINE", nb_line_tLogRow_7);
+
+///////////////////////    			
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "out2");
+				}
+
+				ok_Hash.put("tLogRow_7", true);
+				end_Hash.put("tLogRow_7", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_7 end ] stop
 				 */
 
 			} // end the resume
@@ -2878,13 +3657,33 @@ public class useStringHandling implements TalendJob {
 				 */
 
 				/**
-				 * [tLogRow_1 finally ] start
+				 * [tUniqRow_1 finally ] start
 				 */
 
-				currentComponent = "tLogRow_1";
+				currentComponent = "tUniqRow_1";
 
 				/**
-				 * [tLogRow_1 finally ] stop
+				 * [tUniqRow_1 finally ] stop
+				 */
+
+				/**
+				 * [tMap_4 finally ] start
+				 */
+
+				currentComponent = "tMap_4";
+
+				/**
+				 * [tMap_4 finally ] stop
+				 */
+
+				/**
+				 * [tLogRow_7 finally ] start
+				 */
+
+				currentComponent = "tLogRow_7";
+
+				/**
+				 * [tLogRow_7 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -3204,7 +4003,7 @@ public class useStringHandling implements TalendJob {
 				String dbUser_tDBInput_2 = "talenduser";
 
 				final String decryptedPassword_tDBInput_2 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:6ECvj/WWpLADHms1GxDYNbWsKk5JQWi4qHWHqZ97kwih");
+						.decryptPassword("enc:routine.encryption.key.v1:xPgrQjnHwfpVsuBPoN8X0agWIGVfHrSUwoaD/Yfg/mgm");
 
 				String dbPwd_tDBInput_2 = decryptedPassword_tDBInput_2;
 
@@ -4037,7 +4836,7 @@ public class useStringHandling implements TalendJob {
 				String dbUser_tDBInput_3 = "talenduser";
 
 				final String decryptedPassword_tDBInput_3 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:ytUbsdtw2kHCPoPm/4pqnJz6yafiGBB4TzKIEoWRb4Bj");
+						.decryptPassword("enc:routine.encryption.key.v1:H2OjaESXOrWhTQXApuHFPtXruD+4Q3XyMFeYNTbsMHgM");
 
 				String dbPwd_tDBInput_3 = decryptedPassword_tDBInput_3;
 
@@ -4788,6 +5587,6 @@ public class useStringHandling implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 134253 characters generated by Talend Open Studio for Data Integration on the
- * June 6, 2021 at 6:26:20 PM IST
+ * 153775 characters generated by Talend Open Studio for Data Integration on the
+ * June 6, 2021 at 7:48:01 PM IST
  ************************************************************************************************/
