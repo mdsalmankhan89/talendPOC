@@ -13,6 +13,8 @@
     <module>jobs/process/myfirsttalendjob_0.1</module>
     <module>jobs/process/usemetadatatoread_0.1</module>
     <module>jobs/process/use_tmap_0.1</module>
+    <module>jobs/process/usestringhandling_0.1</module>
+    <module>jobs/process/t_aggr_0.1</module>
   </modules>
   <properties>
     <talend.project.name>LOCAL_PROJECT</talend.project.name>
